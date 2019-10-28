@@ -3,6 +3,8 @@ import React from 'react';
 export default class MovieSearchContainer extends React.Component {
     constructor(props) {
         super(props);
+
+        this.handler = this.handler.bind(this);
     }
 
     handler(event) {
@@ -17,8 +19,8 @@ export default class MovieSearchContainer extends React.Component {
         return (
             <div>
                 <div><h1>Movie Finder</h1></div>
-                <div><input value={ search } placeholder='//search' onChange={ this.handler }></input></div>
-                <p>{ search }</p>
+                <div><input value={search} placeholder='//search' onChange={ this.handler }></input></div>
+                {/* <div><button onClick={this.handleClick}>Submit</button></div> */}
             </div>
         )
     }

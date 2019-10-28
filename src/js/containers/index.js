@@ -1,10 +1,10 @@
 import {connect} from 'react-redux';
-import Search from './Search';
+import MovieSearchContainer from './MovieSearchContainer';
 
 function mapStoreToProps(store){
     return {
-        search: store.search
+        search: store.search.search
     };
 }
 
-export default connect(mapStoreToProps)(Search);
+export default connect(mapStoreToProps)(MovieSearchContainer);

@@ -10,7 +10,7 @@ export default class MovieDetailContainer extends React.Component {
             <div>
                 <h1>Movie Detail Container</h1>
 
-                <p>Viewing movie { this.props.match.params.id }</p>
+                <p>Viewing movie</p>
             </div>
         );
     }
