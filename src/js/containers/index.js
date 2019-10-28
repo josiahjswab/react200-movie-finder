@@ -3,7 +3,8 @@ import MovieSearchContainer from './MovieSearchContainer';
 
 function mapStoreToProps(store){
     return {
-        search: store.search.search
+        searchValue: store.search.value,
+        movieTitle: store.search.title
     };
 }
 
