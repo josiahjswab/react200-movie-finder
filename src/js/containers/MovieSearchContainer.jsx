@@ -27,14 +27,15 @@ export default class MovieSearchContainer extends React.Component {
 
 
         return (
-            <div>
-                <div><h1>Movie Finder</h1></div>
-                <div><input value={ search } placeholder='//search' onChange={ this.handler }></input></div>
-                <div><button onClick={ this.clickHandler }>Submit</button></div>
-                <ul>
-                    <Movie/>
-                </ul>
-
+            <div className='movie-search-container'>
+                <div className='movie-search-header'><h1>Movie Finder</h1></div>
+                <div className='movie-search-input'><input value={ search } placeholder='//search' onChange={ this.handler }></input></div>
+                <div className='movie-search-button'><button onClick={ this.clickHandler }>Submit</button></div>
+                <div className='movie-search-ul'>
+                    <ul>
+                        <Movie/>
+                    </ul>
+                </div>
             </div>
         )
     }
