@@ -18,7 +18,7 @@ app.get('/movieInfo/:inputValue', (req, res) => {
     .then((response) => {
       res.send(response.data);
     });
-  });
+});
 
 app.get('/movie/:id', (req, res) => {
     axios({

@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import Movie from './MovieList/Movie';
+import Movie from './MovieList';
 
 export default class MovieSearchContainer extends React.Component {
     constructor(props) {
@@ -23,7 +23,7 @@ export default class MovieSearchContainer extends React.Component {
     }
 
     render() {
-        const { search } = this.props;
+        const { search  } = this.props;
 
 
         return (
@@ -31,7 +31,10 @@ export default class MovieSearchContainer extends React.Component {
                 <div><h1>Movie Finder</h1></div>
                 <div><input value={ search } placeholder='//search' onChange={ this.handler }></input></div>
                 <div><button onClick={ this.clickHandler }>Submit</button></div>
-                <Movie/>
+                <ul>
+                    <Movie/>
+                </ul>
+
             </div>
         )
     }
