@@ -1,6 +1,8 @@
 const defaultState = {
     value: 'Hi',
-    title: ''
+    movie: [{
+        title: 'Title',
+    }]
 };
 
 export default function movieSearchReducer(state = defaultState, action) {
@@ -16,7 +18,14 @@ export default function movieSearchReducer(state = defaultState, action) {
         case 'GET_SEARCH_REQUEST_FULLFILLED': {
             return {
                 ...state,
-                title: payload.data.Search.Title
+                movie: [...movie, {
+                   title: payload.data.Search[0].Title,
+                   image: payload.data.Search[0].Poster,
+                   year: payload.data.Search[0].Year,
+                //    plot: payload.data.Search.
+                   id: payload.data.Search[0].imdbID
+
+                }]
             };
         }
         default: {

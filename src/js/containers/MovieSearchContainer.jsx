@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Movie from './MovieList/Movie';
 
 export default class MovieSearchContainer extends React.Component {
     constructor(props) {
@@ -23,11 +24,14 @@ export default class MovieSearchContainer extends React.Component {
 
     render() {
         const { search } = this.props;
+
+
         return (
             <div>
                 <div><h1>Movie Finder</h1></div>
-                <div><input value={search} placeholder='//search' onChange={ this.handler }></input></div>
-                <div><button onClick={this.clickHandler}>Submit</button></div>
+                <div><input value={ search } placeholder='//search' onChange={ this.handler }></input></div>
+                <div><button onClick={ this.clickHandler }>Submit</button></div>
+                <Movie/>
             </div>
         )
     }
@@ -41,7 +45,7 @@ function adjustInput(value) {
 }
 
 function searchInput(searchValue) {
-    console.log(`action creator searchInput,  ${searchValue}`);
+    // console.log(`action creator searchInput,  ${searchValue}`);
     return {
         type: 'GET_SEARCH_REQUEST',
         payload: axios.get(`/movieInfo/${searchValue}`)
