@@ -1,4 +1,5 @@
 import React from 'react';
+import { generateKeyPair } from 'crypto';
 
 export default class Movie extends React.Component {
     constructor(props) {
@@ -7,10 +8,12 @@ export default class Movie extends React.Component {
 
     render() {
         const { movieObj } = this.props;
+
         return (
             <div>
-                {movieObj.map(movie => (
-                    <li className='movie-listItem' key={movie['imdbID']}>
+
+                {movieObj.map((movie, index) => (
+                    <li style={(index % 2) ? { backgroundColor: 'lightGrey' } : { backgroundColor: 'grey'}} className='movie-listItem' key={movie['imdbID']}>
                         <div className='movie-img-container'>
                             <img className='poster' src={movie['Poster']}></img>
                         </div>
@@ -18,6 +21,7 @@ export default class Movie extends React.Component {
                             <div className='movie-title-container'>
                                 <h1>{movie['Title']}</h1>
                                 <h3>{movie['Year']}</h3>
+                                <h3>{index}</h3>
                             </div>
                             <div className='movie-plot-container'>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting 

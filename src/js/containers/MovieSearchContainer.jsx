@@ -29,8 +29,10 @@ export default class MovieSearchContainer extends React.Component {
         return (
             <div className='movie-search-container'>
                 <div className='movie-search-header'><h1>Movie Finder</h1></div>
-                <div className='movie-search-input'><input value={ search } placeholder='//search' onChange={ this.handler }></input></div>
-                <div className='movie-search-button'><button onClick={ this.clickHandler }>Submit</button></div>
+                <div className='movie-search-input'>
+                    <input value={ search } placeholder='//search' onChange={ this.handler }></input>
+                    <button onClick={ this.clickHandler }>Submit</button>
+                </div>
                 <div className='movie-search-ul'>
                     <ul>
                         <Movie/>
