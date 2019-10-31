@@ -13,15 +13,15 @@ export default class Movie extends React.Component {
             <div>
 
                 {movieObj.map((movie, index) => (
-                    <li style={(index % 2) ? { backgroundColor: 'lightGrey' } : { backgroundColor: 'grey'}} className='movie-listItem' key={movie['imdbID']}>
+                    <li className='movie-listItem' key={movie['imdbID']}>
                         <div className='movie-img-container'>
-                            <img className='poster' src={movie['Poster']}></img>
+                            <img className='poster' src={(movie['Poster'] != 'N/A') ? movie['Poster'] : 'https://via.placeholder.com/170/000000/FFFFFF/?text=no_image'}></img>
                         </div>
-                        <div>
+                        <div className='movie-img-container-2' style={(index % 2) ? { backgroundColor: 'rgba(31, 0, 234, 0.12)' } : { backgroundColor: 'rgba(0, 234, 11, 0.12)'}}>
                             <div className='movie-title-container'>
                                 <h1>{movie['Title']}</h1>
-                                <h3>{movie['Year']}</h3>
-                                <h3>{index}</h3>
+                                <h3>{movie['Year']} - <small>{index}</small></h3>
+                                
                             </div>
                             <div className='movie-plot-container'>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting 
