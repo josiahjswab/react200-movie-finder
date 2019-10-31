@@ -1,5 +1,5 @@
 const defaultState = {
-    value: '',
+    value: 'matrix',
     movie: []
 };
 

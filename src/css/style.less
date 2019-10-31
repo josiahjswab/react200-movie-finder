@@ -13,34 +13,80 @@ body {
 }
 .movie-search-container {
   margin: 20px 0 0 0;
-  .movie-search-input {
+  .movie-search-bar {
     display: flex;
     position: fixed;
-    left: 40%;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.616);
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: 0.5s;
+    left: 50%;
+    transform: translate(-50%, 0);
+    &:hover {
+      background: rgba(255, 255, 255, 0.294);
+    }
     input {
-      margin: 0 10px 0 0;
+      margin: 0 10px;
+      height: 30px;
+      border-radius: 5px;
+    }
+    button {
+      height: 30px;
+      padding: 0px 5px;
+      border-radius: 5px;
+      transition: 0.1s;
+      outline: none;
+      &:active {
+      transform: translateY(1px);
+      outline: none;
+      }
     }
   }
   .movie-search-ul {
     display: flex;
     justify-content: center;
+    margin: 15px 0 0 0;
+    padding: 100px 0 0 0;
   }
   .movie-search-ul ul li{
     display: flex;
     flex-direction: row;
     list-style-type: none;
     margin: 15px 0;
-    max-width: 600px;
-    .movie-img-container img {
+    max-width: 800px;
+    .movie-img-container button {
+      margin: 0 20px 0 0;
+      transition: 0.3s;
+      border: black;
+      outline: none;
+      &:active {
+        transform: translateY(2px);
+        outline: none;
+      }
+      img {
       width: 170px;
       height: 255px;
-      height: auto;
-      margin: 0 20px 0 0;
+      transition: 0.2s;
+
+        &:hover {
+          cursor: pointer;
+          box-shadow: 0 0 10px 0 rgb(255, 255, 255);
+        }
+        &:active {
+          box-shadow: 0 0 10px 0 rgb(149, 36, 255);
+        }
+      }
     }
-    div h1 {
-      border-bottom: 2px white solid;
+      
+    div h2 {
+      padding: 10px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.089);
+    }
+    .movie-plot-container {
+      padding: 5px 15px;
     }
 
   }

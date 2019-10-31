@@ -22,15 +22,16 @@ export default class MovieSearchContainer extends React.Component {
         dispatch(searchInput(searchValue));
     }
 
+
     render() {
-        const { search } = this.props;
+        const { searchValue } = this.props;
 
 
         return (
             <div className='movie-search-container'>
-                <div className='movie-search-header'><h1>Movie Finder</h1></div>
-                <div className='movie-search-input'>
-                    <input value={ search } placeholder='//search' onChange={ this.handler }></input>
+                <div className='movie-search-bar'>
+                    <h1>Movie Finder</h1>
+                    <input autoFocus value={ searchValue } onChange={ this.handler }></input>
                     <button onClick={ this.clickHandler }>Submit</button>
                 </div>
                 <div className='movie-search-ul'>
