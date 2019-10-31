@@ -23,7 +23,7 @@ export default class MovieSearchContainer extends React.Component {
     }
 
     render() {
-        const { search  } = this.props;
+        const { search } = this.props;
 
 
         return (

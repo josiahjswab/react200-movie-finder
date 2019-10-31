@@ -14,7 +14,7 @@ export default class Movie extends React.Component {
 
                 {movieObj.map((movie, index) => (
                     <li className='movie-listItem' key={movie['imdbID']}>
-                        <div className='movie-img-container'>
+                        <div id={movie['imdbID']} className='movie-img-container'>
                             <img className='poster' src={(movie['Poster'] != 'N/A') ? movie['Poster'] : 'https://via.placeholder.com/170/000000/FFFFFF/?text=no_image'}></img>
                         </div>
                         <div className='movie-img-container-2' style={(index % 2) ? { backgroundColor: 'rgba(31, 0, 234, 0.12)' } : { backgroundColor: 'rgba(0, 234, 11, 0.12)'}}>
