@@ -10,8 +10,7 @@ export default class Movie extends React.Component {
 
         return (
             <div>
-
-                {movieObj.map((movie, index) => (
+                {(movieObj == undefined) ? (<p style={{color: 'red'}}>Oops invalid search</p>): movieObj.map((movie, index) => (
                     <li className='movie-listItem' key={movie['imdbID']}>
                         <div id={movie['imdbID']} className='movie-img-container'>
                             <a href={`/#/movie/${movie['imdbID']}`}>
@@ -24,16 +23,14 @@ export default class Movie extends React.Component {
                                 <h4>{movie['Year']}</h4>
                             </div>
                             <div className='movie-plot-container'>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting 
-                                    industry. Lorem Ipsum has been the industry's standard dummy text 
-                                    ever since the 1500s, when an unknown printer took a galley of type 
-                                    and scrambled it to make a type specimen book. It has survived not 
-                                    only five centuries, but also the leap into electronic.
+                                <p>
+                                    click poster for movie details
                                 </p>
                             </div>
                         </div>
                     </li>
                 ))}
+                
             </div>
         );
     }

@@ -1,5 +1,6 @@
 const defaultState = {
-    details: []
+    details: [],
+    toggle: 'true'
 };
 
 export default function movieReducer(state = defaultState, action) {
@@ -10,6 +11,13 @@ export default function movieReducer(state = defaultState, action) {
             return {
                 ...state,
                 details: payload.data
+            }
+        }
+        case 'UPDATE_TOGGLE': {
+            return {
+                ...state,
+                toggle: payload.event
+
             }
         }
         default: {

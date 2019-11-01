@@ -4,6 +4,7 @@ import MovieDetailContainer from './MovieDetailContainer';
 function mapStoreToProps(store) {
     return {
         details: store.detailsRoot.details,
+        toggle: store.detailsRoot.toggle,
         movieObj: store.searchRoot.movie
     };
 }

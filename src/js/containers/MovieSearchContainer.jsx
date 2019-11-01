@@ -42,7 +42,7 @@ export default class MovieSearchContainer extends React.Component {
                         value={ searchValue } 
                         onChange={ this.handler }
                         onKeyDown={this.enterKey}
-                        placeholder='Enter Movie Title'    
+                        placeholder='Enter Movie Title'
                     ></input>
                     <button onClick={ this.clickHandler }>Submit</button>
                 </div>
