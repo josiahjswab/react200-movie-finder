@@ -46,7 +46,7 @@ export default class MovieSearchContainer extends React.Component {
                     ></input>
                     <button onClick={ this.clickHandler }>Submit</button>
                 </div>
-                <div className='movie-search-ul'>
+                <div className='movie-search-list'>
                     <ul>
                         <Movie/>
                     </ul>
