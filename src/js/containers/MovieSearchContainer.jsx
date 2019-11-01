@@ -8,6 +8,7 @@ export default class MovieSearchContainer extends React.Component {
 
         this.handler = this.handler.bind(this);
         this.clickHandler = this.clickHandler.bind(this);
+        this.enterKey = this.enterKey.bind(this);
     }
 
     handler(event) {
@@ -22,6 +23,11 @@ export default class MovieSearchContainer extends React.Component {
         dispatch(searchInput(searchValue));
     }
 
+    enterKey() {
+        if(event.keyCode == 13) {
+            this.clickHandler();
+        }
+    }
 
     render() {
         const { searchValue } = this.props;
@@ -31,7 +37,13 @@ export default class MovieSearchContainer extends React.Component {
             <div className='movie-search-container'>
                 <div className='movie-search-bar'>
                     <h1>Movie Finder</h1>
-                    <input autoFocus value={ searchValue } onChange={ this.handler }></input>
+                    <input 
+                        autoFocus 
+                        value={ searchValue } 
+                        onChange={ this.handler }
+                        onKeyDown={this.enterKey}
+                        placeholder='Enter Movie Title'    
+                    ></input>
                     <button onClick={ this.clickHandler }>Submit</button>
                 </div>
                 <div className='movie-search-ul'>
@@ -52,7 +64,6 @@ function adjustInput(value) {
 }
 
 function searchInput(searchValue) {
-    // console.log(`action creator searchInput,  ${searchValue}`);
     return {
         type: 'GET_SEARCH_REQUEST',
         payload: axios.get(`/movieInfo/${searchValue}&plot=short`)

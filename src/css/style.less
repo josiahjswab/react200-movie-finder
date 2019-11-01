@@ -51,7 +51,7 @@ body {
     margin: 15px 0 0 0;
     padding: 100px 0 0 0;
   }
-  .movie-search-ul ul li{
+  .movie-listItem{
     display: flex;
     flex-direction: row;
     list-style-type: none;
@@ -76,6 +76,7 @@ body {
           box-shadow: 0 0 10px 0 rgb(255, 255, 255);
         }
         &:active {
+          transform: translateY(2px);
           box-shadow: 0 0 10px 0 rgb(149, 36, 255);
         }
       }
@@ -89,5 +90,70 @@ body {
       padding: 5px 15px;
     }
 
+  }
+}
+
+.container-details {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  color: white;
+  margin: 20px 0 0 0;
+  .movie-title-container {
+    margin: 0 0 25px 0;
+  }
+  .movie-plot-container {
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .details {
+      max-width: 40%;
+      padding-right: 20px;
+      h6 {
+        margin-bottom: 15px;
+        padding-bottom: 5px;
+        &:after {
+          content: ""; /* This is necessary for the pseudo element to work. */ 
+          display: block; /* This will put the pseudo element on its own line. */
+          margin: 0 auto; /* This will center the border. */
+          width: 60%; /* Change this to whatever width you want. */
+          border-top: 1px hidden grey; /* This creates the border. Replace black with whatever color you want. */
+          box-shadow: 0 0 10px 0 white;
+          padding-bottom: 2px;
+        }
+      }
+      h6:nth-child(5) {
+        border: none;
+      }
+    }
+    .plot {
+      max-width: 60%;
+      font-size: 20px;
+    }
+    
+  }
+  .style-border {
+    margin-top: 10px;
+    &:before {
+      content: ""; /* This is necessary for the pseudo element to work. */ 
+      display: block; /* This will put the pseudo element on its own line. */
+      margin: 0 auto; /* This will center the border. */
+      width: 60%; /* Change this to whatever width you want. */
+      border-top: 1px hidden grey; /* This creates the border. Replace black with whatever color you want. */
+      box-shadow: 0 0 10px 0 white;
+      padding-bottom: 2px;
+    }
+  }
+  .information div button {
+    padding: 5px 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgb(255, 255, 255);
+    outline: none;
+    transition-duration: 0.2s;
+    &:active {
+      transform: translateY(2px);
+      box-shadow: 0 0 10px 0 rgb(149, 36, 255);
+    }
   }
 }

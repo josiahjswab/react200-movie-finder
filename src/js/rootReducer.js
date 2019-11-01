@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import movieSearchReducer from './containers/movieSearchReducer';
-import movieReducer from './containers/MovieList/movieReducer';
+import movieReducer from './containers/MovieDetails/movieReducer';
 
 const rootReducer = combineReducers({
     //props from components gathered here.
