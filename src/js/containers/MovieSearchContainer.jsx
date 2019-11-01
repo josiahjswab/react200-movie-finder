@@ -55,6 +55,6 @@ function searchInput(searchValue) {
     // console.log(`action creator searchInput,  ${searchValue}`);
     return {
         type: 'GET_SEARCH_REQUEST',
-        payload: axios.get(`/movieInfo/${searchValue}`)
+        payload: axios.get(`/movieInfo/${searchValue}&plot=short`)
     };
 }
