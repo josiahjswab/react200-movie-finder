@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import MovieSearchContainer from './containers/';
-import MovieDetailContainer from './containers/MovieDetailContainer';
+import MovieDetailContainer from './containers/MovieDetails';
 
 export default class App extends Component {
   render() {

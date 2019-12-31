@@ -1,4 +1,163 @@
+
+* {
+  margin:0;
+  padding:0;
+}
 body {
-  background: #ECE9E6;
-  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+  background: rgb(0, 0, 0);
+  background: -webkit-linear-gradient(to right, rgb(0, 0, 0), rgb(92, 92, 92));
+  color: white;
+}
+.container {
+  text-align: center;
+}
+.movie-search-container {
+  margin: 20px 0 0 0;
+  .movie-search-bar {
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.616);
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: 0.5s;
+    left: 50%;
+    transform: translate(-50%, 0);
+    &:hover {
+      background: rgba(255, 255, 255, 0.294);
+    }
+    input {
+      margin: 0 10px;
+      height: 30px;
+      border-radius: 5px;
+    }
+    button {
+      height: 30px;
+      padding: 0px 5px;
+      border-radius: 5px;
+      transition: 0.1s;
+      outline: none;
+      &:active {
+      transform: translateY(1px);
+      outline: none;
+      }
+    }
+  }
+  .movie-search-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0 0 0;
+    padding: 100px 0 0 0;
+  }
+  .movie-listItem{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 15px 0;
+    .movie-img-container a {
+      margin: 0 20px 0 0;
+      transition: 0.3s;
+      border: black;
+      outline: none;
+      &:active {
+        transform: translateY(2px);
+        outline: none;
+      }
+      img {
+      width: 170px;
+      height: 255px;
+      transition: 0.2s;
+
+        &:hover {
+          cursor: pointer;
+          box-shadow: 0 0 10px 0 rgb(255, 255, 255);
+        }
+        &:active {
+          transform: translateY(2px);
+          box-shadow: 0 0 10px 0 rgb(149, 36, 255);
+        }
+      }
+    }
+    .movie-img-container-2 {
+      min-width: 450px;
+    }
+      
+    div h2 {
+      padding: 10px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.089);
+    }
+    .movie-plot-container {
+      padding: 5px 15px;
+      color: grey;
+    }
+
+  }
+}
+
+.container-details {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  color: white;
+  margin: 20px 0 0 0;
+  .movie-title-container {
+    margin: 0 0 25px 0;
+  }
+  .movie-plot-container {
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .details {
+      max-width: 40%;
+      padding-right: 20px;
+      h6 {
+        margin-bottom: 15px;
+        padding-bottom: 5px;
+        &:after {
+          content: ""; /* This is necessary for the pseudo element to work. */ 
+          display: block; /* This will put the pseudo element on its own line. */
+          margin: 0 auto; /* This will center the border. */
+          width: 60%; /* Change this to whatever width you want. */
+          border-top: 1px hidden grey; /* This creates the border. Replace black with whatever color you want. */
+          box-shadow: 0 0 10px 0 white;
+          padding-bottom: 2px;
+        }
+      }
+      h6:nth-child(6) {
+        border: none;
+      }
+    }
+    .plot {
+      max-width: 60%;
+      font-size: 20px;
+    }
+    
+  }
+  .style-border {
+    margin-top: 10px;
+    &:before {
+      content: ""; /* This is necessary for the pseudo element to work. */ 
+      display: block; /* This will put the pseudo element on its own line. */
+      margin: 0 auto; /* This will center the border. */
+      width: 60%; /* Change this to whatever width you want. */
+      border-top: 1px hidden grey; /* This creates the border. Replace black with whatever color you want. */
+      box-shadow: 0 0 10px 0 white;
+      padding-bottom: 2px;
+    }
+  }
+  .information div button {
+    padding: 5px 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgb(255, 255, 255);
+    outline: none;
+    transition-duration: 0.2s;
+    &:active {
+      transform: translateY(2px);
+      box-shadow: 0 0 10px 0 rgb(149, 36, 255);
+    }
+  }
 }
